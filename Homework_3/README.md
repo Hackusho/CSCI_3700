@@ -1,5 +1,5 @@
 # Homework 3: Fruit Baskets API 
-# Allows the user to update basket a and also show uniqiue fruits in each basket, A and B.
+# Allows the user to update basket A and also show uniqiue fruits in each basket, A and B.
 
 ## Team Members
 -   Irving Villanueva
