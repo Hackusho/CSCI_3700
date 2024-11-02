@@ -2,7 +2,7 @@ import psycopg2
 from psycopg2 import Error
 
 # this function is based on the tutorial at: https://pynative.com/python-postgresql-tutorial/
-def connect_to_db(username='raywu1990',password='test',host='127.0.0.1',port='5432',database='dvdrental'):
+def connect_to_db(username='irv121',password='test',host='127.0.0.1',port='5432',database='hw3'):
 	try:
 		# Connect to an existing database
 		connection = psycopg2.connect(user=username,
@@ -44,6 +44,18 @@ def run_and_fetch_sql(cursor, sql_string=""):
 		record = cursor.fetchall()
 		# print("Here are the first 5 rows", record[:5])
 		return record
+	except (Exception, Error) as error:
+		print("Errors while executes the code: ", error)
+		return -1
+
+def run_and_commit_sql(cursor, connection, sql_string=""):
+	try:
+		# Executing a SQL query
+		cursor.execute(sql_string)
+		# if some changes are made, you need to commit your changes
+		connection.commit()
+		# use 1 to represent success
+		return 1
 	except (Exception, Error) as error:
 		print("Errors while executes the code: ", error)
 		return -1
